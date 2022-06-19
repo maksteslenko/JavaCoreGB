@@ -7,6 +7,8 @@ public class WeatherFromAPI {
     public static void main(String[] args) throws IOException {
         OkHttpClient okHttpClient = new OkHttpClient();
 
+        String cityId = "295212";
+
         HttpUrl url = new HttpUrl.Builder()
                 .scheme("http")
                 .host("dataservice.accuweather.com")
@@ -14,7 +16,7 @@ public class WeatherFromAPI {
                 .addPathSegment("v1")
                 .addPathSegment("daily")
                 .addPathSegment("5day")
-                .addPathSegment("295212")
+                .addPathSegment(cityId)
                 .addQueryParameter("apikey", "HdLFGyNLPeQl3AfDDQVkJYGq1uaj3reA")
                 .addQueryParameter("language", "ru")
                 .addQueryParameter("details", "false")
